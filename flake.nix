@@ -1,16 +1,15 @@
 {
   inputs = {
-    # Note: change to upstream later
+    # Note: change to upstream when 9.2 changes merged there
     # common.url = "github:nammayatri/common";
-    common.url = "github:arjunkathuria/common/Mobility-GHC927-Rebased";
+    common.url = "github:arjunkathuria/common/Mobility-GHC927-rebased-03";
     nixpkgs.follows = "common/nixpkgs";
-    flake-parts.follows = "common/flake-parts";
+    haskell-flake.follows = "common/haskell-flake";
     systems.url = "github:nix-systems/default";
 
-    # Note: change to upstream later
+    # Note: change to upstream when 9.2 changes merged there
     # shared-kernel.url = "github:nammayatri/shared-kernel";
-    shared-kernel.url = "github:arjunkathuria/shared-kernel/GHC-927-testing-snapshot";
-    shared-kernel.inputs.nixpkgs.follows = "nixpkgs";
+    shared-kernel.url = "github:arjunkathuria/shared-kernel/Mobility-GHC927-rebased-03";
   };
   outputs = inputs:
     inputs.common.lib.mkFlake { inherit inputs; } {
